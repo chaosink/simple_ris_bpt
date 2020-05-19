@@ -18,7 +18,7 @@ public:
 	direction() : m_is_valid()
 	{
 	}
-	direction(const vec3 &w, const vec3 &n) : m_w(w), m_cos(dot(w, n)), m_abs_cos(abs(m_cos))
+	direction(const vec3 &w, const vec3 &n) : m_w(w), m_cos(dot(w, n)), m_abs_cos(std::abs(m_cos))
 	{
 		//invalidate directions of grazing angle
 		m_is_valid = (m_abs_cos >= 1e-6f);

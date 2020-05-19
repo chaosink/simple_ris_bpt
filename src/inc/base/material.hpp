@@ -70,7 +70,7 @@ public:
 
 	brdf(const intersection &x, const direction &w, const col3 &kd) : m_f(kd / PI()), m_n(x.n())
 	{
-		if(abs(m_n.x) < abs(m_n.y)){
+		if(std::abs(m_n.x) < std::abs(m_n.y)){
 			m_t = normalize(vec3(0, m_n.z, -m_n.y));
 		}else{
 			m_t = normalize(vec3(-m_n.z, 0, m_n.x));

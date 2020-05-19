@@ -1,4 +1,4 @@
-
+#include <cstring>
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace our{
@@ -118,7 +118,7 @@ inline imagef renderer::render(const scene &scene, const camera &camera)
 		thread_local random_number_generator rng(std::random_device{}());
 
 		const col3 col = radiance(x, y, scene, camera, rng);
-		if(!(isnan(col[0] + col[1] + col[2]))){
+		if(!(std::isnan(col[0] + col[1] + col[2]))){
 			screen(x, y)[0] = col[0];
 			screen(x, y)[1] = col[1];
 			screen(x, y)[2] = col[2];
